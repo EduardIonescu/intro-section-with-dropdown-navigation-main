@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+:root{
+    /* FONTS */
+    --font-family-epilogue: 'Epilogue', sans-serif;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --font-size-paragraph: 18px;
+    --font-size-main: 16px;
+
+    /* COLORS */
+    --almost-white: hsl(0, 0%, 98%);
+    --medium-gray: hsl(0, 0%, 41%);
+    --almost-black: hsl(0, 0%, 8%);
+
+    --width-mobile:375px;
+    --width-desktop:1300px;
+}
+
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family-epilogue);
+}
+
+html,body{
+    max-width:100%;
+    height:100%;
+    overflow-x: hidden;
+}
+
+body{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--almost-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+li{
+    list-style: none;
+}
+
+#sidenav{
+    z-index:1;
+    background-color: var(--almost-white);
+}
+#sidenav a, .dropdown{
+    text-decoration: none;
+    font-size: var(--font-size-main);
+    font-weight:var(--font-weight-medium);
+    color: var(--medium-gray);
+    display: block;
+    transition: 0.3s;
+}
+#sidenav .dropdown{
+    background:transparent;
+    border:none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap:1rem;
+}
+#sidenav  #button-login, #button-register {
+    font-size:15px;
+    font-weight:var(--font-weight-medium);
+    color:var(--medium-gray);
+    width: 200px;
+    height: 40px;
+    display: block;
+    background-color: transparent;
+    cursor:pointer;
+}
+#sidenav  #button-login{
+    border:none;
+}
+#sidenav #button-register{
+    border-radius:0.8rem;
+    border:1px solid var(--almost-black);
+}
+
+#sidenav .slide{
+    display: none;
+}
+#sidenav .slide-active{
+    display: block!important;
+}
+#sidenav .slide-active a{
+    display: flex;
+    align-items: center;
+}
+#sidenav .slide-active .icon{
+    width:17px;
+    object-fit: contain;
+    margin-right:0.8rem;
+}
+
+.sidenav-active{
+    width:calc((100vw - 375px)/ 2 + 250px)!important;
+}
+
+main{
+    width:var(--width-mobile);
+}
+
+main #image-hero-mobile{
+    width:100%;
+}
+
+section{
+    padding:0 1rem;
+    text-align: center;
+}
+main .title{
+    font-size:220%;
+    color:var(--almost-black);
+    margin-top:3rem;
+    margin-bottom:1rem;
+}
+main .description{
+    color:var(--medium-gray);
+    font-weight: var(--font-weight-medium);
+    font-size:var(--font-size-main);
+    line-height:1.6rem;
+}
+main section .button{
+    background-color: var(--almost-black);
+    color:var(--almost-white);
+    border-radius:1rem;
+    font-weight: var(--font-weight-bold);
+    font-size:var(--font-size-main);
+    cursor:pointer;
+    
+}
+
+.footer{
+    width:var(--width-mobile);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--almost-white);
+    z-index:-99;
+}
+
+
+@media (max-width:1299px){
+    .desktop{
+        display: none!important;
+    }
+
+    #darken{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+        transition: background 0.5s;
+        z-index:-9;
+        overflow: hidden;
+        margin:0;
+    }
+    
+    .darken-active{
+        background-color: var(--almost-black);
+        opacity:0.7;
+        z-index:1!important;
+    }
+    
+    nav #burger-menu{
+        display:inline-block;
+        cursor:pointer;
+        z-index:2;
+    }
+    .bar1, .bar2, .bar3{
+        width:2rem;
+        height:2px;
+        background-color: var(--almost-black);
+        margin:5px 0;
+        transition: 0.5s;
+    }
+    .change .bar1{
+        transform: translate(0, 7px) rotate(-45deg);
+    }
+    .change .bar2{
+        opacity:0;
+    }
+    .change .bar3{
+        transform: translate(0, -7px) rotate(45deg);
+    }
+
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding:1.5rem 1rem;
+        width: var(--width-mobile);
+    }
+    #sidenav{
+        height:100%;
+        width:0;
+        position:fixed;
+        top:0;
+        right:0;     
+        overflow-x: hidden;
+        transition:0.5s;
+        padding-top:5rem;
+    }
+    #sidenav a, .dropdown{
+        padding: 12px 8px 12px 32px;
+    }
+    #sidenav .slide-active{
+        padding-left:1.5rem;
+    }
+    #sidenav  #button-login, #button-register{
+        margin:auto;
+    }
+    #sidenav  #button-login{
+        margin-top:1rem;
+    }
+
+    main section .button{
+        width:135px;
+        height:3rem;
+        margin-top:1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .footer{
+        padding-bottom: 5.5rem;
+    }
+    .footer img{
+        max-height:25px;
+        max-width:80px;
+    }
+}
+
+@media (min-width:1300px){
+    .mobile{
+        display: none!important;    
+    }
+
+    header{
+        display: flex;
+        width:var(--width-desktop);
+        padding:1.4rem 2.2rem;
+        align-items: center;
+    }
+    header .logo{
+        margin-top:10px;
+    }
+
+    #sidenav{
+        width:100%;
+        padding-left:3.8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #sidenav .navbar-left-desktop{
+        display: flex;
+        justify-content: center;
+        gap:2.2rem;
+        position:relative;
+    }
+    #sidenav .navbar-right-desktop{
+        display: flex;
+    }
+    #sidenav .navbar-left-desktop .dropdown{
+        gap:0.5rem;
+    }
+    #sidenav .navbar-left-desktop .slide-active{
+        position:absolute;
+        top:2.3rem;
+        background-color:var(--almost-white);
+        padding:1.1rem 1.3rem;
+        line-height: 1.9rem;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius:0.8rem;
+    }
+    #sidenav .navbar-left-desktop .slide-active:first-of-type{
+        left:-4.2rem;
+    }
+    #sidenav .navbar-left-desktop .slide-active:last-of-type{
+        left:8rem;
+    }
+    #sidenav  #button-login, #button-register{
+        width:90px;
+        height:2.2rem;
+        font-size:13px;
+    }
+    #sidenav a:hover, #sidenav a:focus{
+        color:var(--almost-black);
+    }
+
+    main{
+        width:1300px;
+        display: flex;
+        gap:7.5rem;
+        padding: 4rem 115px;
+        align-items: flex-end;
+    }
+    main #image-hero-desktop{
+        height:580px;
+    }
+
+    section{
+        text-align: left;
+        padding-left:2rem;
+    }
+    section .title{
+        font-size:4.4rem;
+        margin-bottom: 2.5rem;
+    }
+    section .description{
+        width:390px;
+    }
+    section .button{
+        width:142px;
+        height:52px;
+        margin-top:50px;
+        margin-bottom:6.2rem;
+        transition: all 0.25s ease-in-out;
+    }
+    section .button:hover{
+        background-color:transparent;
+        color:var(--almost-black);
+    }
+
+    .footer{
+        gap:2rem;
+        padding-left:3.5rem;
+    }
+    .footer img{
+        max-height:2rem;
+        max-width:100px;
+    }
+}

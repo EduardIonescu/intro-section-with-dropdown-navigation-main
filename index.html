@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link rel="stylesheet" href="styles.css" />
+
+		<title>Intro section with dropdown navigation</title>
+	</head>
+	<body>
+		<div id="darken"></div>
+		<header>
+			<nav id="navbar">
+				<img src="./images/logo.svg" alt="snap logo" class="logo" />
+
+				<!--.burger-menu has the class .change as toggle on "click"-->
+				<div id="burger-menu" class="mobile">
+					<div class="bar1"></div>
+					<div class="bar2"></div>
+					<div class="bar3"></div>
+				</div>
+			</nav>
+			<aside id="sidenav">
+				<div class="navbar-left-desktop">
+					<button class="dropdown">
+						Features
+						<img
+							src="./images/icon-arrow-down.svg"
+							alt="dropdown arrow"
+							class="dropdown-arrow"
+						/>
+					</button>
+					<ul class="slide">
+						<li>
+							<a href="#"
+								><img
+									src="./images/icon-todo.svg"
+									alt=""
+									aria-hidden="true"
+									class="icon"
+								/>Todo List</a
+							>
+						</li>
+						<li>
+							<a href="#"
+								><img
+									src="./images/icon-calendar.svg"
+									alt=""
+									aria-hidden="true"
+									class="icon"
+								/>Calendar</a
+							>
+						</li>
+						<li>
+							<a href="#"
+								><img
+									src="./images/icon-reminders.svg"
+									alt=""
+									aria-hidden="true"
+									class="icon"
+								/>Reminders</a
+							>
+						</li>
+						<li>
+							<a href="#"
+								><img
+									src="./images/icon-planning.svg"
+									alt=""
+									aria-hidden="true"
+									class="icon"
+								/>Planning</a
+							>
+						</li>
+					</ul>
+					<button class="dropdown">
+						Company
+						<img
+							src="./images/icon-arrow-down.svg"
+							alt="dropdown arrow"
+							class="dropdown-arrow"
+						/>
+					</button>
+					<ul class="slide">
+						<li>
+							<a href="#">History</a>
+						</li>
+						<li>
+							<a href="#">Our Team</a>
+						</li>
+						<li>
+							<a href="#">Blog</a>
+						</li>
+					</ul>
+					<a href="#">Careers</a>
+					<a href="#">About</a>
+				</div>
+
+				<div class="navbar-right-desktop">
+					<button id="button-login">Login</button>
+					<button id="button-register">Register</button>
+				</div>
+			</aside>
+		</header>
+
+		<main>
+			<img
+				src="./images/image-hero-mobile.png"
+				alt="man working on laptop"
+				id="image-hero-mobile"
+				class="mobile"
+			/>
+			<section>
+				<h1 class="title">Make remote work</h1>
+				<p class="description">
+					Get your team in sync, no matter your location. Streamline
+					processes, create team rituals, and watch productivity soar.
+				</p>
+				<button class="button">Learn more</button>
+				<footer class="footer">
+					<img
+						src="./images/client-databiz.svg"
+						alt="databiz image"
+					/>
+					<img
+						src="./images/client-audiophile.svg"
+						alt="audiophile image"
+					/>
+					<img src="./images/client-meet.svg" alt="meet image" />
+					<img src="./images/client-maker.svg" alt="maker image" />
+				</footer>
+			</section>
+
+			<img
+				src="./images/image-hero-desktop.png"
+				alt="man working on laptop"
+				id="image-hero-desktop"
+				class="desktop"
+			/>
+		</main>
+	</body>
+</html>
+
+<script src="script.js"></script>
